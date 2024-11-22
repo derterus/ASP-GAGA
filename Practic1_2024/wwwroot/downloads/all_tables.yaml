@@ -1,0 +1,268 @@
+categories:
+- Column1: Название
+  Column2: Описание
+- Column1: Electronics
+  Column2: Electronic devices
+- Column1: Furniture
+  Column2: Home furniture
+- Column1: Clothing
+  Column2: Apparel
+- Column1: Books
+  Column2: Books for all ages
+- Column1: Toys
+  Column2: Toys for kids
+manufacturers:
+- Column1: Название
+  Column2: Страна
+- Column1: Sony
+  Column2: Japan
+- Column1: Ikea
+  Column2: Sweden
+- Column1: Nike
+  Column2: USA
+- Column1: Penguin Books
+  Column2: UK
+- Column1: Lego
+  Column2: Denmark
+characteristics:
+- Column1: Название
+  Column2: Описание
+- Column1: Color
+  Column2: Product color
+- Column1: Size
+  Column2: Product size
+- Column1: Material
+  Column2: Type of material
+- Column1: Brand
+  Column2: Manufacturer brand
+- Column1: Weight
+  Column2: Weight of product
+products:
+- Column1: Вес
+  Column2: Название
+  Column3: Цена
+  Column4: Описание
+  Column5: category_id
+  Column6: manufacturer_id
+  Column7: SKU
+  Column8: Количество_на_складе
+  Column9: Дата_создания
+  Column10: Дата_обновления
+- Column1: 1500
+  Column2: Smartphone
+  Column3: 700
+  Column4: High-tech phone
+  Column5: 1
+  Column6: 1
+  Column7: SP700
+  Column8: 50
+  Column9: 2024-11-01
+  Column10: 2024-11-10
+- Column1: 20000
+  Column2: Table
+  Column3: 150
+  Column4: Dining table
+  Column5: 2
+  Column6: 2
+  Column7: TB150
+  Column8: 20
+  Column9: 2024-11-02
+  Column10: 2024-11-12
+- Column1: 100
+  Column2: T-Shirt
+  Column3: 30
+  Column4: Cotton t-shirt
+  Column5: 3
+  Column6: 3
+  Column7: TS30
+  Column8: 100
+  Column9: 2024-11-03
+  Column10: 2024-11-13
+- Column1: 500
+  Column2: Novel
+  Column3: 20
+  Column4: Bestselling novel
+  Column5: 4
+  Column6: 4
+  Column7: NV20
+  Column8: 200
+  Column9: 2024-11-04
+  Column10: 2024-11-14
+- Column1: 500
+  Column2: Toy Car
+  Column3: 50
+  Column4: Remote-controlled car
+  Column5: 5
+  Column6: 5
+  Column7: TC50
+  Column8: 15
+  Column9: 2024-11-05
+  Column10: 2024-11-15
+users:
+- Column1: UserName
+  Column2: Password
+  Column3: PasswordResetToken
+  Column4: Email
+  Column5: Status
+  Column6: created_at
+- Column1: user1
+  Column2: hash1
+  Column3: token2
+  Column4: user1@example.com
+  Column5: 10
+  Column6: 2024-11-01
+- Column1: user2
+  Column2: hash2
+  Column3: token2
+  Column4: user2@example.com
+  Column5: 20
+  Column6: 2024-11-02
+- Column1: user3
+  Column2: hash3
+  Column3: token2
+  Column4: user3@example.com
+  Column5: 10
+  Column6: 2024-11-03
+- Column1: user4
+  Column2: hash4
+  Column3: token2
+  Column4: user4@example.com
+  Column5: 10
+  Column6: 2024-11-04
+- Column1: user5
+  Column2: hash5
+  Column3: token5
+  Column4: user5@example.com
+  Column5: 30
+  Column6: 2024-11-05
+reviews:
+- Column1: Дата
+  Column2: user_id
+  Column3: product_id
+  Column4: Оценка
+  Column5: Текст
+- Column1: 2024-11-16
+  Column2: 1
+  Column3: 1
+  Column4: 5
+  Column5: Excellent product
+- Column1: 2024-11-17
+  Column2: 2
+  Column3: 2
+  Column4: 4
+  Column5: Good quality
+- Column1: 2024-11-18
+  Column2: 3
+  Column3: 3
+  Column4: 3
+  Column5: Average item
+- Column1: 2024-11-19
+  Column2: 4
+  Column3: 4
+  Column4: 5
+  Column5: Loved it
+- Column1: 2024-11-20
+  Column2: 5
+  Column3: 5
+  Column4: 4
+  Column5: Highly recommended
+product_characteristics:
+- Column1: product_id
+  Column2: characteristic_id
+  Column3: value
+- Column1: 1
+  Column2: 101
+  Column3: Value A
+- Column1: 1
+  Column2: 102
+  Column3: Value B
+- Column1: 2
+  Column2: 103
+  Column3: Value C
+- Column1: 3
+  Column2: 101
+  Column3: Value D
+- Column1: 3
+  Column2: 104
+  Column3: Value E
+product_images:
+- Column1: product_id
+  Column2: URL_изображения
+  Column3: Основное_изображение
+- Column1: 1
+  Column2: url1.jpg
+  Column3: TRUE
+- Column1: 1
+  Column2: url2.jpg
+  Column3: FALSE
+- Column1: 2
+  Column2: url3.jpg
+  Column3: TRUE
+- Column1: 3
+  Column2: url4.jpg
+  Column3: FALSE
+- Column1: 4
+  Column2: url5.jpg
+  Column3: TRUE
+orders:
+- Column1: user_id
+  Column2: Дата_создания
+  Column3: Дата_обновления
+  Column4: Сумма
+  Column5: Статус
+- Column1: user1
+  Column2: 2024-11-10
+  Column3: 2024-11-15
+  Column4: 1000
+  Column5: Pending
+- Column1: user2
+  Column2: 2024-11-11
+  Column3: 2024-11-16
+  Column4: 2000
+  Column5: Completed
+- Column1: user3
+  Column2: 2024-11-12
+  Column3: 2024-11-17
+  Column4: 1500
+  Column5: Cancelled
+- Column1: user1
+  Column2: 2024-11-13
+  Column3: 2024-11-18
+  Column4: 500
+  Column5: Pending
+- Column1: user4
+  Column2: 2024-11-14
+  Column3: 2024-11-19
+  Column4: 3000
+  Column5: Completed
+order_items:
+- Column1: order_id
+  Column2: product_id
+  Column3: Количество
+  Column4: Цена_за_единицу
+  Column5: Итог_по_пункту
+- Column1: 1
+  Column2: 2
+  Column3: 4
+  Column4: 500
+  Column5: 2000
+- Column1: 1
+  Column2: 1
+  Column3: 3
+  Column4: 200
+  Column5: 600
+- Column1: 2
+  Column2: 3
+  Column3: 2
+  Column4: 300
+  Column5: 600
+- Column1: 3
+  Column2: 5
+  Column3: 1
+  Column4: 100
+  Column5: 100
+- Column1: 4
+  Column2: 2
+  Column3: 1
+  Column4: 400
+  Column5: 400

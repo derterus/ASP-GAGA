@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Конвертер данных";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Загрузите файл Excel для конвертации в различные форматы.</p>
+
+<form enctype="multipart/form-data" method="post" asp-action="Upload">
+    <div class="form-group">
+        <label for="excelFile">Выберите файл Excel</label>
+        <input type="file" id="excelFile" name="excelFile" class="form-control" accept=".xlsx, .xls" />
+    </div>
+    <button type="submit" class="btn btn-primary">Загрузить файл</button>
+</form>
+
+@if (ViewData["DownloadLinks"] != null)
+{
+    <h3>Файлы для скачивания</h3>
+    <ul>
+        @foreach (var downloadLink in (List<string>)ViewData["DownloadLinks"])
+        {
+            <li>
+                <a href="@downloadLink" download>@downloadLink</a>
+            </li>
+        }
+    </ul>
+}
+
