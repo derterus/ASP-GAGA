@@ -48,11 +48,11 @@ reviews
 
 product_characteristics
 product_id;characteristic_id;value
-1;101;Value A
-1;102;Value B
-2;103;Value C
-3;101;Value D
-3;104;Value E
+1;1;Value A
+1;2;Value B
+2;3;Value C
+3;1;Value D
+3;4;Value E
 
 product_images
 product_id;URL_изображения;Основное_изображение
@@ -64,11 +64,11 @@ product_id;URL_изображения;Основное_изображение
 
 orders
 user_id;Дата_создания;Дата_обновления;Сумма;Статус
-user1;2024-11-10;2024-11-15;1000;Pending
-user2;2024-11-11;2024-11-16;2000;Completed
-user3;2024-11-12;2024-11-17;1500;Cancelled
-user1;2024-11-13;2024-11-18;500;Pending
-user4;2024-11-14;2024-11-19;3000;Completed
+1;2024-11-10;2024-11-15;1000;Pending
+2;2024-11-11;2024-11-16;2000;Completed
+3;2024-11-12;2024-11-17;1500;Cancelled
+4;2024-11-13;2024-11-18;500;Pending
+5;2024-11-14;2024-11-19;3000;Completed
 
 order_items
 order_id;product_id;Количество;Цена_за_единицу;Итог_по_пункту

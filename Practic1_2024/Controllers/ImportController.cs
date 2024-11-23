@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Practic1_2024.Data;
 using System.Globalization;
 using System.Xml.Linq;
+using YamlDotNet.Serialization.NamingConventions;
+using YamlDotNet.RepresentationModel;
 
 namespace Practic1_2024.Controllers
 {
@@ -71,6 +73,14 @@ namespace Practic1_2024.Controllers
                     break;
                 case ".csv":
                     await ImportFromCsv(filePath);
+                    break;
+                case ".xml":
+                    await ImportFromXml(filePath);
+                    break;
+
+                case ".yaml":
+                case ".yml":
+                    await ImportFromYaml(filePath);
                     break;
                 default:
                     ModelState.AddModelError("", "Неподдерживаемый формат файла.");
@@ -276,7 +286,7 @@ namespace Practic1_2024.Controllers
                             product_id = Convert.ToInt32(row[1]),
                             Количество = Convert.ToInt32(row[2]),
                             Цена_за_единицу = Convert.ToDecimal(row[3]),
-                           
+
                         };
                         _context.OrderItems.Add(orderItem);
                         await _context.SaveChangesAsync();
@@ -290,422 +300,126 @@ namespace Practic1_2024.Controllers
 
 
 
-        // Пример импорта CSV (если файл в формате CSV)
         private async Task ImportFromCsv(string filePath)
         {
             var lines = System.IO.File.ReadAllLines(filePath);
+
+            string currentTable = null;
+            List<string> headers = null;
+
             foreach (var line in lines)
             {
-                var row = line.Split(';').ToList();
+                if (string.IsNullOrWhiteSpace(line)) continue;
 
-                if (row.Count >= 2)
+                var trimmedLine = line.Trim();
+
+                // Определяем текущую таблицу
+                if (trimmedLine.Equals("categories", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("manufacturers", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("characteristics", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("products", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("reviews", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("product_characteristics", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("product_images", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("users", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("orders", StringComparison.OrdinalIgnoreCase) ||
+                    trimmedLine.Equals("order_items", StringComparison.OrdinalIgnoreCase))
                 {
-                    if (row[0].Equals("categories", StringComparison.OrdinalIgnoreCase))
-                    {
-                        var category = new Category
-                        {
-                            Название = row[1],
-                            Описание = row.ElementAtOrDefault(2)
-                        };
+                    currentTable = trimmedLine.ToLower();
+                    headers = null;
+                    continue;
+                }
 
-                        _context.Categories.Add(category);
-                        await _context.SaveChangesAsync();
-                    }
-                    else if (row[0].Equals("manufacturers", StringComparison.OrdinalIgnoreCase))
-                    {
-                        var manufacturer = new Manufacturer
-                        {
-                            Название = row[1],
-                            Страна = row.ElementAtOrDefault(2)
-                        };
+                if (headers == null)
+                {
+                    headers = trimmedLine.Split(';').ToList();
+                    continue;
+                }
 
-                        _context.Manufacturers.Add(manufacturer);
-                        await _context.SaveChangesAsync();
+                var row = trimmedLine.Split(';').ToList();
+
+                // Обработка данных с использованием общего метода
+                await ProcessRow(currentTable, row);
+            }
+        }
+        private async Task ImportFromXml(string filePath)
+        {
+            var doc = XDocument.Load(filePath);
+
+            foreach (var tableElement in doc.Root.Elements())
+            {
+                var tableName = tableElement.Name.LocalName.ToLower();
+
+                foreach (var rowElement in tableElement.Elements("Row"))
+                {
+                    // Collect values from all columns in the row
+                    var rowValues = rowElement.Elements()
+                                               .Select(column => column.Value)
+                                               .ToList();
+
+                    // Check if it's a header row and skip it
+                    if (rowValues.All(value => value.StartsWith("Column")))
+                    {
+                        continue; // Skip header
                     }
-                    // Дополнительно можно обработать другие таблицы, такие как "products" или "reviews"
+
+                    // Validate or handle the row here
+                    try
+                    {
+                        await ProcessRow(tableName, rowValues);
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine($"Error processing row: {ex.Message}");
+                        // Log the issue or handle it gracefully
+                    }
                 }
             }
         }
-            
 
 
+        private async Task ImportFromYaml(string filePath)
+        {
+            var yaml = new YamlStream();
+            using (var reader = new StreamReader(filePath))
+            {
+                yaml.Load(reader);
+            }
 
-        // Остальные методы для XML и YAML могут быть аналогичными
+            var root = (YamlMappingNode)yaml.Documents[0].RootNode;
+
+            foreach (var table in root.Children)
+            {
+                var tableName = table.Key.ToString().ToLower();
+                var tableData = (YamlSequenceNode)table.Value;
+
+                foreach (YamlMappingNode row in tableData)
+                {
+                    // Collect row values
+                    var rowValues = row.Children.Values
+                                         .Select(value => value.ToString())
+                                         .ToList();
+
+                    // Check if it's a header row and skip it
+                    if (rowValues.All(value => value.StartsWith("Column")))
+                    {
+                        continue; // Skip header
+                    }
+
+                    // Validate or handle the row here
+                    try
+                    {
+                        await ProcessRow(tableName, rowValues);
+                    }
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine($"Error processing row in table {tableName}: {ex.Message}");
+                        // Log or handle the issue gracefully
+                    }
+                }
+            }
+        }
+
+
     }
 }
-
-
-//// Импорт данных из YAML файла
-//private async Task ImportFromYaml(string filePath)
-//        {
-//            var yamlContent = System.IO.File.ReadAllText(filePath);
-//            var deserializer = new DeserializerBuilder()
-//                .WithNamingConvention(YamlDotNet.Serialization.NamingConventions.CamelCaseNamingConvention.Instance)
-//                .Build();
-
-//            // Десериализация содержимого YAML в словарь
-//            var data = deserializer.Deserialize<Dictionary<string, List<Dictionary<string, string>>>>(yamlContent);
-
-//            // Импортируем данные в соответствующие таблицы
-//            if (data.ContainsKey("Categories"))
-//            {
-//                foreach (var item in data["Categories"])
-//                {
-//                    var category = new Category
-//                    {
-//                        Name = item["Name"]
-//                    };
-//                    _context.Categories.Add(category);
-//                }
-//                await _context.SaveChangesAsync();
-//            }
-
-//            if (data.ContainsKey("Brands"))
-//            {
-//                foreach (var item in data["Brands"])
-//                {
-//                    var brand = new Product
-//                    {
-//                        Name = item["Name"]
-//                    };
-//                    _context.Brands.Add(brand);
-//                }
-//                await _context.SaveChangesAsync();
-//            }
-
-//            if (data.ContainsKey("Smartphones"))
-//            {
-//                foreach (var item in data["Smartphones"])
-//                {
-//                    var smartphone = new Review
-//                    {
-//                        Name = item["Name"],
-//                        BrandId = int.Parse(item["BrandId"]),
-//                        Description = item["Description"],
-//                        Price = decimal.Parse(item["Price"]),
-//                        ReleaseYear = int.Parse(item["ReleaseYear"]),
-//                        SimCount = int.Parse(item["SimCount"]),
-//                        MemoryOptions = item["MemoryOptions"],
-//                        ColorOptions = item["ColorOptions"],
-//                        CategoryId = int.Parse(item["CategoryId"]),
-//                        ImageUrl = item["ImageUrl"]
-//                    };
-//                    _context.Smartphones.Add(smartphone);
-//                }
-//                await _context.SaveChangesAsync();
-//            }
-
-//            if (data.ContainsKey("SmartphoneCharacteristics"))
-//            {
-//                foreach (var item in data["SmartphoneCharacteristics"])
-//                {
-//                    var characteristic = new ProductCharacteristic
-//                    {
-//                        SmartphoneId = int.Parse(item["SmartphoneId"]),
-//                        Characteristic = item["Characteristic"],
-//                        Value = item["Value"]
-//                    };
-//                    _context.SmartphoneCharacteristics.Add(characteristic);
-//                }
-//                await _context.SaveChangesAsync();
-//            }
-
-//            if (data.ContainsKey("Users"))
-//            {
-//                foreach (var item in data["Users"])
-//                {
-//                    var user = new User
-//                    {
-//                        Name = item["Name"],
-//                        Email = item["Email"],
-//                        Password = item["Password"],
-//                        Role = item["Role"],
-//                        Phone = item["Phone"],
-//                        Address = item["Address"]
-//                    };
-//                    _context.Users.Add(user);
-//                }
-//                await _context.SaveChangesAsync();
-//            }
-
-//            if (data.ContainsKey("Orders"))
-//            {
-//                foreach (var item in data["Orders"])
-//                {
-//                    var order = new Order
-//                    {
-//                        UserId = int.Parse(item["UserId"]),
-//                        TotalPrice = decimal.Parse(item["TotalPrice"]),
-//                        Status = item["Status"],
-//                        CreatedAt = DateOnly.Parse(item["CreatedAt"]),
-//                        UpdatedAt = DateOnly.Parse(item["UpdatedAt"])
-//                    };
-//                    _context.Orders.Add(order);
-//                }
-//                await _context.SaveChangesAsync();
-//            }
-
-//            if (data.ContainsKey("OrderItems"))
-//            {
-//                foreach (var item in data["OrderItems"])
-//                {
-//                    var orderItem = new OrderItem
-//                    {
-//                        OrderId = int.Parse(item["OrderId"]),
-//                        SmartphoneId = int.Parse(item["SmartphoneId"]),
-//                        Quantity = int.Parse(item["Quantity"]),
-//                        Price = decimal.Parse(item["Price"])
-//                    };
-//                    _context.OrderItems.Add(orderItem);
-//                }
-//                await _context.SaveChangesAsync();
-//            }
-
-//            // Сохраняем все изменения в базе данных
-//            await _context.SaveChangesAsync();
-//        }
-//        // Пример импорта данных для Categories (категорий)
-//        private async Task ImportCategories(List<string> columns)
-//        {
-//            try
-//            {
-//                Console.WriteLine($"Обрабатываем строку: {string.Join(";", columns)}");
-
-//                // Пропускаем строку, если это заголовок
-//                if (columns.Count == 1 && columns[0].ToLower() == "name")
-//                {
-//                    Console.WriteLine("Пропускаем строку с заголовками.");
-//                    return; // Пропускаем строку, если это заголовок
-//                }
-//                // Пропускаем строки с пустыми или неверными данными
-
-//                // Создаем новый объект категории
-//                var category = new Category
-//                {
-//                    Name = columns[0].Trim() // Имя категории
-//                };
-
-//                // Добавляем категорию в базу данных
-//                _context.Categories.Add(category);
-//                await _context.SaveChangesAsync(); // Сохраняем изменения
-//            }
-//            catch (Exception ex)
-//            {
-//                Console.WriteLine($"Ошибка при импорте категории: {string.Join(";", columns)}. Ошибка: {ex.Message}");
-//            }
-//        }
-
-//        private async Task ImportBrands(List<string> columns)
-//        {
-//            try
-//            {
-//                Console.WriteLine($"Обрабатываем строку: {string.Join(";", columns)}");
-
-//                // Пропускаем строку, если это заголовок
-//                if (columns.Count == 1 && columns[0].ToLower() == "name")
-//                {
-//                    Console.WriteLine("Пропускаем строку с заголовками.");
-//                    return; // Пропускаем строку, если это заголовок
-//                }
-
-//                // Создаем новый объект бренда
-//                var brand = new Product
-//                {
-//                    Name = columns[0].Trim() // Имя бренда
-//                };
-
-//                // Добавляем бренд в базу данных
-//                _context.Brands.Add(brand);
-//                await _context.SaveChangesAsync(); // Сохраняем изменения
-//            }
-//            catch (Exception ex)
-//            {
-//                Console.WriteLine($"Ошибка при импорте бренда: {string.Join(";", columns)}. Ошибка: {ex.Message}");
-//            }
-//        }
-
-
-//        // Пример импорта данных для Users (пользователей)
-//        private async Task ImportUsers(List<string> columns)
-//        {
-//            try
-//            {
-//                Console.WriteLine($"Обрабатываем строку: {string.Join(";", columns)}");
-
-//                // Пропускаем строку, если это заголовок
-//                if (columns.Count > 1 && columns[0].ToLower() == "name" && columns[1].ToLower() == "email")
-//                {
-//                    Console.WriteLine("Пропускаем строку с заголовками.");
-//                    return; // Пропускаем строку, если это заголовок
-//                }
-
-//                if (columns.Count < 6) return; // Пропускаем строки с недостаточными данными
-
-//                var user = new User
-//                {
-//                    Name = columns[0].Trim(),
-//                    Email = columns[1].Trim(),
-//                    Password = columns[2].Trim(),
-//                    Role = columns[3].Trim(),
-//                    Phone = columns[4].Trim(),
-//                    Address = columns[5].Trim()
-//                };
-
-//                _context.Users.Add(user);
-//                await _context.SaveChangesAsync();
-//            }
-//            catch (Exception ex)
-//            {
-//                Console.WriteLine($"Ошибка при импорте пользователя: {string.Join(";", columns)}. Ошибка: {ex.Message}");
-//            }
-//        }
-
-//        // Пример импорта данных для Smartphones (смартфонов)
-//        private async Task ImportSmartphones(List<string> columns)
-//        {
-//            try
-//            {
-//                Console.WriteLine($"Обрабатываем строку: {string.Join(";", columns)}");
-
-//                // Пропускаем строку, если это заголовок
-//                if (columns.Count > 1 && columns[0].ToLower() == "name" && columns[1].ToLower() == "brandid")
-//                {
-//                    Console.WriteLine("Пропускаем строку с заголовками.");
-//                    return; // Пропускаем строку, если это заголовок
-//                }
-//                // Проверка на достаточность данных в строке
-//                if (columns.Count < 9) return; // Пропускаем строки с недостаточными данными
-
-//                // Извлекаем значения из строк
-//                var smartphone = new Review
-//                {
-//                    Name = columns[0].Trim(), // Название смартфона
-//                    BrandId = Convert.ToInt32(columns[1].Trim()), // Идентификатор бренда
-//                    Description = columns[2].Trim(), // Описание
-//                    Price = Convert.ToDecimal(columns[3].Trim()), // Цена
-//                    ReleaseYear = Convert.ToInt32(columns[4].Trim()), // Год выпуска
-//                    SimCount = Convert.ToInt32(columns[5].Trim()), // Количество SIM-карт
-//                    MemoryOptions = columns[6].Trim(), // Опции памяти (например, "128GB, 256GB")
-//                    ColorOptions = columns[7].Trim(), // Опции цвета
-//                    CategoryId = Convert.ToInt32(columns[8].Trim()), // Идентификатор категории
-//                    ImageUrl = columns[9].Trim() // URL изображения
-//                };
-
-//                // Добавляем смартфон в базу данных
-//                _context.Smartphones.Add(smartphone);
-//                await _context.SaveChangesAsync(); // Сохраняем изменения в базе данных
-//            }
-//            catch (Exception ex)
-//            {
-//                // Логирование ошибок импорта
-//                Console.WriteLine($"Ошибка при импорте смартфона: {string.Join(";", columns)}. Ошибка: {ex.Message}");
-//            }
-//        }
-
-//        // Пример импорта данных для SmartphoneCharacteristics (характеристик смартфонов)
-//        private async Task ImportSmartphoneCharacteristics(List<string> columns)
-//        {
-//            try
-//            {
-//                Console.WriteLine($"Обрабатываем строку: {string.Join(";", columns)}");
-//                // Пропускаем строку, если это заголовок
-//                if (columns.Count > 1 && columns[0].ToLower() == "smartphoneid" && columns[1].ToLower() == "characteristic")
-//                {
-//                    Console.WriteLine("Пропускаем строку с заголовками.");
-//                    return; // Пропускаем строку, если это заголовок
-//                }
-//                // Проверка на достаточность данных в строке
-//                if (columns.Count < 3) return; // Пропускаем строки с недостаточными данными
-
-//                // Извлекаем значения из строки
-//                var smartphoneCharacteristic = new ProductCharacteristic
-//                {
-//                    SmartphoneId = Convert.ToInt32(columns[0].Trim()), // Идентификатор смартфона
-//                    Characteristic = columns[1].Trim(), // Характеристика (например, "Диагональ экрана")
-//                    Value = columns[2].Trim() // Значение характеристики (например, "6.1 дюйма")
-//                };
-
-//                // Добавляем характеристику смартфона в базу данных
-//                _context.SmartphoneCharacteristics.Add(smartphoneCharacteristic);
-//                await _context.SaveChangesAsync(); // Сохраняем изменения в базе данных
-//            }
-//            catch (Exception ex)
-//            {
-//                // Логирование ошибок импорта
-//                Console.WriteLine($"Ошибка при импорте характеристики смартфона: {string.Join(";", columns)}. Ошибка: {ex.Message}");
-//            }
-//        }
-
-
-//        // Пример импорта данных для Orders (заказов)
-//        private async Task ImportOrders(List<string> columns)
-//        {
-//            try
-//            {
-//                Console.WriteLine($"Обрабатываем строку: {string.Join(";", columns)}");
-//                // Пропускаем строку, если это заголовок
-//                if (columns.Count > 1 && columns[0].ToLower() == "userid" && columns[1].ToLower() == "totalprice")
-//                {
-//                    Console.WriteLine("Пропускаем строку с заголовками.");
-//                    return; // Пропускаем строку, если это заголовок
-//                }
-//                if (columns.Count < 5) return; // Пропускаем строки с недостаточными данными
-
-//                var order = new Order
-//                {
-//                    UserId = Convert.ToInt32(columns[0].Trim()), // Идентификатор пользователя
-//                    TotalPrice = Convert.ToDecimal(columns[1].Trim()), // Общая стоимость
-//                    Status = columns[2].Trim(), // Статус
-//                    CreatedAt = DateOnly.Parse(columns[3].Trim()), // Дата создания
-//                    UpdatedAt = DateOnly.Parse(columns[4].Trim()) // Дата обновления
-//                };
-
-//                _context.Orders.Add(order);
-//                await _context.SaveChangesAsync();
-
-//                // Если есть позиции для этого заказа, добавляем их
-//                // Позиции будут добавлены в методе ImportOrderItems
-//            }
-//            catch (Exception ex)
-//            {
-//                Console.WriteLine($"Ошибка при импорте заказа: {string.Join(";", columns)}. Ошибка: {ex.Message}");
-//            }
-//        }
-//        private async Task ImportOrderItems(List<string> columns)
-//        {
-//            try
-//            {
-//                Console.WriteLine($"Обрабатываем строку: {string.Join(";", columns)}");
-
-//                // Пропускаем строку, если это заголовок
-//                if (columns.Count > 1 && columns[0].ToLower() == "orderid" && columns[1].ToLower() == "smartphoneid")
-//                {
-//                    Console.WriteLine("Пропускаем строку с заголовками.");
-//                    return; // Пропускаем строку, если это заголовок
-//                }
-
-//                // Пропускаем строки с недостаточными данными
-//                if (columns.Count < 4) return;
-
-
-//                // Создание нового элемента заказа
-//                var orderItem = new OrderItem
-//                {
-//                    OrderId = Convert.ToInt32(columns[0].Trim()), // Идентификатор заказа
-//                    SmartphoneId = Convert.ToInt32(columns[1].Trim()), // Идентификатор смартфона
-//                    Quantity = Convert.ToInt32(columns[2].Trim()), // Количество товара
-//                    Price = Convert.ToDecimal(columns[3].Trim()), // Цена товара
-//                };
-
-//                // Добавление позиции в заказ
-//                _context.OrderItems.Add(orderItem);
-//                await _context.SaveChangesAsync();
-
-//            }
-//            catch (Exception ex)
-//            {
-//                Console.WriteLine($"Ошибка при импорте позиции в заказе: {string.Join(";", columns)}. Ошибка: {ex.Message}");
-//            }
-//        }
-//    }
-//}

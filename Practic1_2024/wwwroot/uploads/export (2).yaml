@@ -1,0 +1,724 @@
+categories:
+  Headers:
+  - Название
+  - Описание
+  Rows:
+  - - Electronics
+    - Electronic devices
+  - - Furniture
+    - Home furniture
+  - - Clothing
+    - Apparel
+  - - Books
+    - Books for all ages
+  - - Toys
+    - Toys for kids
+  - - Electronics
+    - Electronic devices
+  - - Furniture
+    - Home furniture
+  - - Clothing
+    - Apparel
+  - - Books
+    - Books for all ages
+  - - Toys
+    - Toys for kids
+  - - Название
+    - Описание
+  - - Electronics
+    - Electronic devices
+  - - Furniture
+    - Home furniture
+  - - Clothing
+    - Apparel
+  - - Books
+    - Books for all ages
+  - - Toys
+    - Toys for kids
+manufacturers:
+  Headers:
+  - Название
+  - Страна
+  Rows:
+  - - Sony
+    - Japan
+  - - Ikea
+    - Sweden
+  - - Nike
+    - USA
+  - - Penguin Books
+    - UK
+  - - Lego
+    - Denmark
+  - - Sony
+    - Japan
+  - - Ikea
+    - Sweden
+  - - Nike
+    - USA
+  - - Penguin Books
+    - UK
+  - - Lego
+    - Denmark
+  - - Название
+    - Страна
+  - - Sony
+    - Japan
+  - - Ikea
+    - Sweden
+  - - Nike
+    - USA
+  - - Penguin Books
+    - UK
+  - - Lego
+    - Denmark
+characteristics:
+  Headers:
+  - Название
+  - Описание
+  Rows:
+  - - Color
+    - Product color
+  - - Size
+    - Product size
+  - - Material
+    - Type of material
+  - - Brand
+    - Manufacturer brand
+  - - Weight
+    - Weight of product
+  - - Color
+    - Product color
+  - - Size
+    - Product size
+  - - Material
+    - Type of material
+  - - Brand
+    - Manufacturer brand
+  - - Weight
+    - Weight of product
+  - - Название
+    - Описание
+  - - Color
+    - Product color
+  - - Size
+    - Product size
+  - - Material
+    - Type of material
+  - - Brand
+    - Manufacturer brand
+  - - Weight
+    - Weight of product
+products:
+  Headers:
+  - Вес
+  - Название
+  - Цена
+  - Описание
+  - category_id
+  - manufacturer_id
+  - SKU
+  - Количество_на_складе
+  - Дата_создания
+  - Дата_обновления
+  Rows:
+  - - 1500
+    - Smartphone
+    - 700
+    - High-tech phone
+    - 1
+    - 1
+    - SP700
+    - 50
+    - 2024-11-01
+    - 2024-11-10
+  - - 20000
+    - Table
+    - 150
+    - Dining table
+    - 2
+    - 2
+    - TB150
+    - 20
+    - 2024-11-02
+    - 2024-11-12
+  - - 100
+    - T-Shirt
+    - 30
+    - Cotton t-shirt
+    - 3
+    - 3
+    - TS30
+    - 100
+    - 2024-11-03
+    - 2024-11-13
+  - - 500
+    - Novel
+    - 20
+    - Bestselling novel
+    - 4
+    - 4
+    - NV20
+    - 200
+    - 2024-11-04
+    - 2024-11-14
+  - - 500
+    - Toy Car
+    - 50
+    - Remote-controlled car
+    - 5
+    - 5
+    - TC50
+    - 15
+    - 2024-11-05
+    - 2024-11-15
+  - - 1500
+    - Smartphone
+    - 700
+    - High-tech phone
+    - 1
+    - 1
+    - SP700
+    - 50
+    - 2024-11-01
+    - 2024-11-10
+  - - 20000
+    - Table
+    - 150
+    - Dining table
+    - 2
+    - 2
+    - TB150
+    - 20
+    - 2024-11-02
+    - 2024-11-12
+  - - 100
+    - T-Shirt
+    - 30
+    - Cotton t-shirt
+    - 3
+    - 3
+    - TS30
+    - 100
+    - 2024-11-03
+    - 2024-11-13
+  - - 500
+    - Novel
+    - 20
+    - Bestselling novel
+    - 4
+    - 4
+    - NV20
+    - 200
+    - 2024-11-04
+    - 2024-11-14
+  - - 500
+    - Toy Car
+    - 50
+    - Remote-controlled car
+    - 5
+    - 5
+    - TC50
+    - 15
+    - 2024-11-05
+    - 2024-11-15
+  - - 1500
+    - Smartphone
+    - 700
+    - High-tech phone
+    - 1
+    - 1
+    - SP700
+    - 50
+    - 2024-11-01
+    - 2024-11-10
+  - - 20000
+    - Table
+    - 150
+    - Dining table
+    - 2
+    - 2
+    - TB150
+    - 20
+    - 2024-11-02
+    - 2024-11-12
+  - - 100
+    - T-Shirt
+    - 30
+    - Cotton t-shirt
+    - 3
+    - 3
+    - TS30
+    - 100
+    - 2024-11-03
+    - 2024-11-13
+  - - 500
+    - Novel
+    - 20
+    - Bestselling novel
+    - 4
+    - 4
+    - NV20
+    - 200
+    - 2024-11-04
+    - 2024-11-14
+  - - 500
+    - Toy Car
+    - 50
+    - Remote-controlled car
+    - 5
+    - 5
+    - TC50
+    - 15
+    - 2024-11-05
+    - 2024-11-15
+users:
+  Headers:
+  - UserName
+  - Password
+  - PasswordResetToken
+  - Email
+  - Status
+  - created_at
+  Rows:
+  - - user1
+    - hash1
+    - token2
+    - user1@example.com
+    - 10
+    - 2024-11-01
+  - - user2
+    - hash2
+    - token2
+    - user2@example.com
+    - 20
+    - 2024-11-02
+  - - user3
+    - hash3
+    - token2
+    - user3@example.com
+    - 10
+    - 2024-11-03
+  - - user4
+    - hash4
+    - token2
+    - user4@example.com
+    - 10
+    - 2024-11-04
+  - - user5
+    - hash5
+    - token5
+    - user5@example.com
+    - 30
+    - 2024-11-05
+  - - user1
+    - hash1
+    - token2
+    - user1@example.com
+    - 10
+    - 2024-11-01
+  - - user2
+    - hash2
+    - token2
+    - user2@example.com
+    - 20
+    - 2024-11-02
+  - - user3
+    - hash3
+    - token2
+    - user3@example.com
+    - 10
+    - 2024-11-03
+  - - user4
+    - hash4
+    - token2
+    - user4@example.com
+    - 10
+    - 2024-11-04
+  - - user5
+    - hash5
+    - token5
+    - user5@example.com
+    - 30
+    - 2024-11-05
+  - - user1
+    - hash1
+    - token2
+    - user1@example.com
+    - 10
+    - 2024-11-01
+  - - user2
+    - hash2
+    - token2
+    - user2@example.com
+    - 20
+    - 2024-11-02
+  - - user3
+    - hash3
+    - token2
+    - user3@example.com
+    - 10
+    - 2024-11-03
+  - - user4
+    - hash4
+    - token2
+    - user4@example.com
+    - 10
+    - 2024-11-04
+  - - user5
+    - hash5
+    - token5
+    - user5@example.com
+    - 30
+    - 2024-11-05
+reviews:
+  Headers:
+  - Дата
+  - user_id
+  - product_id
+  - Оценка
+  - Текст
+  Rows:
+  - - 2024-11-16
+    - 1
+    - 1
+    - 5
+    - Excellent product
+  - - 2024-11-17
+    - 2
+    - 2
+    - 4
+    - Good quality
+  - - 2024-11-18
+    - 3
+    - 3
+    - 3
+    - Average item
+  - - 2024-11-19
+    - 4
+    - 4
+    - 5
+    - Loved it
+  - - 2024-11-20
+    - 5
+    - 5
+    - 4
+    - Highly recommended
+  - - 2024-11-16
+    - 1
+    - 1
+    - 5
+    - Excellent product
+  - - 2024-11-17
+    - 2
+    - 2
+    - 4
+    - Good quality
+  - - 2024-11-18
+    - 3
+    - 3
+    - 3
+    - Average item
+  - - 2024-11-19
+    - 4
+    - 4
+    - 5
+    - Loved it
+  - - 2024-11-20
+    - 5
+    - 5
+    - 4
+    - Highly recommended
+  - - 2024-11-16
+    - 1
+    - 1
+    - 5
+    - Excellent product
+  - - 2024-11-17
+    - 2
+    - 2
+    - 4
+    - Good quality
+  - - 2024-11-18
+    - 3
+    - 3
+    - 3
+    - Average item
+  - - 2024-11-19
+    - 4
+    - 4
+    - 5
+    - Loved it
+  - - 2024-11-20
+    - 5
+    - 5
+    - 4
+    - Highly recommended
+product_characteristics:
+  Headers:
+  - product_id
+  - characteristic_id
+  - value
+  Rows:
+  - - 1
+    - 1
+    - Value A
+  - - 1
+    - 2
+    - Value B
+  - - 2
+    - 3
+    - Value C
+  - - 3
+    - 1
+    - Value D
+  - - 3
+    - 4
+    - Value E
+  - - 1
+    - 1
+    - Value A
+  - - 1
+    - 2
+    - Value B
+  - - 2
+    - 3
+    - Value C
+  - - 3
+    - 1
+    - Value D
+  - - 3
+    - 4
+    - Value E
+  - - 1
+    - 1
+    - Value A
+  - - 1
+    - 2
+    - Value B
+  - - 2
+    - 3
+    - Value C
+  - - 3
+    - 1
+    - Value D
+  - - 3
+    - 4
+    - Value E
+product_images:
+  Headers:
+  - product_id
+  - URL_изображения
+  - Основное_изображение
+  Rows:
+  - - 1
+    - url1.jpg
+    - true
+  - - 1
+    - url2.jpg
+    - false
+  - - 2
+    - url3.jpg
+    - true
+  - - 3
+    - url4.jpg
+    - false
+  - - 4
+    - url5.jpg
+    - true
+  - - 1
+    - url1.jpg
+    - true
+  - - 1
+    - url2.jpg
+    - false
+  - - 2
+    - url3.jpg
+    - true
+  - - 3
+    - url4.jpg
+    - false
+  - - 4
+    - url5.jpg
+    - true
+  - - 1
+    - url1.jpg
+    - true
+  - - 1
+    - url2.jpg
+    - false
+  - - 2
+    - url3.jpg
+    - true
+  - - 3
+    - url4.jpg
+    - false
+  - - 4
+    - url5.jpg
+    - true
+orders:
+  Headers:
+  - user_id
+  - Дата_создания
+  - Дата_обновления
+  - Сумма
+  - Статус
+  Rows:
+  - - 1
+    - 2024-11-10
+    - 2024-11-15
+    - 1000
+    - Pending
+  - - 2
+    - 2024-11-11
+    - 2024-11-16
+    - 2000
+    - Completed
+  - - 3
+    - 2024-11-12
+    - 2024-11-17
+    - 1500
+    - Cancelled
+  - - 4
+    - 2024-11-13
+    - 2024-11-18
+    - 500
+    - Pending
+  - - 5
+    - 2024-11-14
+    - 2024-11-19
+    - 3000
+    - Completed
+  - - 1
+    - 2024-11-10
+    - 2024-11-15
+    - 1000
+    - Pending
+  - - 2
+    - 2024-11-11
+    - 2024-11-16
+    - 2000
+    - Completed
+  - - 3
+    - 2024-11-12
+    - 2024-11-17
+    - 1500
+    - Cancelled
+  - - 4
+    - 2024-11-13
+    - 2024-11-18
+    - 500
+    - Pending
+  - - 5
+    - 2024-11-14
+    - 2024-11-19
+    - 3000
+    - Completed
+  - - 1
+    - 2024-11-10
+    - 2024-11-15
+    - 1000
+    - Pending
+  - - 2
+    - 2024-11-11
+    - 2024-11-16
+    - 2000
+    - Completed
+  - - 3
+    - 2024-11-12
+    - 2024-11-17
+    - 1500
+    - Cancelled
+  - - 4
+    - 2024-11-13
+    - 2024-11-18
+    - 500
+    - Pending
+  - - 5
+    - 2024-11-14
+    - 2024-11-19
+    - 3000
+    - Completed
+order_items:
+  Headers:
+  - order_id
+  - product_id
+  - Количество
+  - Цена_за_единицу
+  - Итог_по_пункту
+  Rows:
+  - - 1
+    - 2
+    - 4
+    - 500
+    - 2000
+  - - 1
+    - 1
+    - 3
+    - 200
+    - 600
+  - - 2
+    - 3
+    - 2
+    - 300
+    - 600
+  - - 3
+    - 5
+    - 1
+    - 100
+    - 100
+  - - 4
+    - 2
+    - 1
+    - 400
+    - 400
+  - - 1
+    - 2
+    - 4
+    - 500
+    - 2000
+  - - 1
+    - 1
+    - 3
+    - 200
+    - 600
+  - - 2
+    - 3
+    - 2
+    - 300
+    - 600
+  - - 3
+    - 5
+    - 1
+    - 100
+    - 100
+  - - 4
+    - 2
+    - 1
+    - 400
+    - 400
+  - - 1
+    - 2
+    - 4
+    - 500
+    - 2000
+  - - 1
+    - 1
+    - 3
+    - 200
+    - 600
+  - - 2
+    - 3
+    - 2
+    - 300
+    - 600
+  - - 3
+    - 5
+    - 1
+    - 100
+    - 100
+  - - 4
+    - 2
+    - 1
+    - 400
+    - 400

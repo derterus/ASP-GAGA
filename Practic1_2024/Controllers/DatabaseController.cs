@@ -52,6 +52,7 @@ namespace Practic1_2024.Controllers
                                 "Characteristics",
                                 "Manufacturers",
                                 "Categories",
+                                "Users"
                             };
 
                             foreach (var table in tables)

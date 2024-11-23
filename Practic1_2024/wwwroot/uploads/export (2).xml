@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tables>
+<categories>
+  <Row>
+    <Название>Electronics</Название>
+    <Описание>Electronic devices</Описание>
+  </Row>
+  <Row>
+    <Название>Furniture</Название>
+    <Описание>Home furniture</Описание>
+  </Row>
+  <Row>
+    <Название>Clothing</Название>
+    <Описание>Apparel</Описание>
+  </Row>
+  <Row>
+    <Название>Books</Название>
+    <Описание>Books for all ages</Описание>
+  </Row>
+  <Row>
+    <Название>Toys</Название>
+    <Описание>Toys for kids</Описание>
+  </Row>
+</categories>
+<manufacturers>
+  <Row>
+    <Название>Sony</Название>
+    <Страна>Japan</Страна>
+  </Row>
+  <Row>
+    <Название>Ikea</Название>
+    <Страна>Sweden</Страна>
+  </Row>
+  <Row>
+    <Название>Nike</Название>
+    <Страна>USA</Страна>
+  </Row>
+  <Row>
+    <Название>Penguin Books</Название>
+    <Страна>UK</Страна>
+  </Row>
+  <Row>
+    <Название>Lego</Название>
+    <Страна>Denmark</Страна>
+  </Row>
+</manufacturers>
+<characteristics>
+  <Row>
+    <Название>Color</Название>
+    <Описание>Product color</Описание>
+  </Row>
+  <Row>
+    <Название>Size</Название>
+    <Описание>Product size</Описание>
+  </Row>
+  <Row>
+    <Название>Material</Название>
+    <Описание>Type of material</Описание>
+  </Row>
+  <Row>
+    <Название>Brand</Название>
+    <Описание>Manufacturer brand</Описание>
+  </Row>
+  <Row>
+    <Название>Weight</Название>
+    <Описание>Weight of product</Описание>
+  </Row>
+</characteristics>
+<products>
+  <Row>
+    <Вес>1500</Вес>
+    <Название>Smartphone</Название>
+    <Цена>700</Цена>
+    <Описание>High-tech phone</Описание>
+    <category_id>1</category_id>
+    <manufacturer_id>1</manufacturer_id>
+    <SKU>SP700</SKU>
+    <Количество_на_складе>50</Количество_на_складе>
+    <Дата_создания>2024-11-01</Дата_создания>
+    <Дата_обновления>2024-11-10</Дата_обновления>
+  </Row>
+  <Row>
+    <Вес>20000</Вес>
+    <Название>Table</Название>
+    <Цена>150</Цена>
+    <Описание>Dining table</Описание>
+    <category_id>2</category_id>
+    <manufacturer_id>2</manufacturer_id>
+    <SKU>TB150</SKU>
+    <Количество_на_складе>20</Количество_на_складе>
+    <Дата_создания>2024-11-02</Дата_создания>
+    <Дата_обновления>2024-11-12</Дата_обновления>
+  </Row>
+  <Row>
+    <Вес>100</Вес>
+    <Название>T-Shirt</Название>
+    <Цена>30</Цена>
+    <Описание>Cotton t-shirt</Описание>
+    <category_id>3</category_id>
+    <manufacturer_id>3</manufacturer_id>
+    <SKU>TS30</SKU>
+    <Количество_на_складе>100</Количество_на_складе>
+    <Дата_создания>2024-11-03</Дата_создания>
+    <Дата_обновления>2024-11-13</Дата_обновления>
+  </Row>
+  <Row>
+    <Вес>500</Вес>
+    <Название>Novel</Название>
+    <Цена>20</Цена>
+    <Описание>Bestselling novel</Описание>
+    <category_id>4</category_id>
+    <manufacturer_id>4</manufacturer_id>
+    <SKU>NV20</SKU>
+    <Количество_на_складе>200</Количество_на_складе>
+    <Дата_создания>2024-11-04</Дата_создания>
+    <Дата_обновления>2024-11-14</Дата_обновления>
+  </Row>
+  <Row>
+    <Вес>500</Вес>
+    <Название>Toy Car</Название>
+    <Цена>50</Цена>
+    <Описание>Remote-controlled car</Описание>
+    <category_id>5</category_id>
+    <manufacturer_id>5</manufacturer_id>
+    <SKU>TC50</SKU>
+    <Количество_на_складе>15</Количество_на_складе>
+    <Дата_создания>2024-11-05</Дата_создания>
+    <Дата_обновления>2024-11-15</Дата_обновления>
+  </Row>
+</products>
+<users>
+  <Row>
+    <UserName>user1</UserName>
+    <Password>hash1</Password>
+    <PasswordResetToken>token2</PasswordResetToken>
+    <Email>user1@example.com</Email>
+    <Status>10</Status>
+    <created_at>2024-11-01</created_at>
+  </Row>
+  <Row>
+    <UserName>user2</UserName>
+    <Password>hash2</Password>
+    <PasswordResetToken>token2</PasswordResetToken>
+    <Email>user2@example.com</Email>
+    <Status>20</Status>
+    <created_at>2024-11-02</created_at>
+  </Row>
+  <Row>
+    <UserName>user3</UserName>
+    <Password>hash3</Password>
+    <PasswordResetToken>token2</PasswordResetToken>
+    <Email>user3@example.com</Email>
+    <Status>10</Status>
+    <created_at>2024-11-03</created_at>
+  </Row>
+  <Row>
+    <UserName>user4</UserName>
+    <Password>hash4</Password>
+    <PasswordResetToken>token2</PasswordResetToken>
+    <Email>user4@example.com</Email>
+    <Status>10</Status>
+    <created_at>2024-11-04</created_at>
+  </Row>
+  <Row>
+    <UserName>user5</UserName>
+    <Password>hash5</Password>
+    <PasswordResetToken>token5</PasswordResetToken>
+    <Email>user5@example.com</Email>
+    <Status>30</Status>
+    <created_at>2024-11-05</created_at>
+  </Row>
+</users>
+<reviews>
+  <Row>
+    <Дата>2024-11-16</Дата>
+    <user_id>1</user_id>
+    <product_id>1</product_id>
+    <Оценка>5</Оценка>
+    <Текст>Excellent product</Текст>
+  </Row>
+  <Row>
+    <Дата>2024-11-17</Дата>
+    <user_id>2</user_id>
+    <product_id>2</product_id>
+    <Оценка>4</Оценка>
+    <Текст>Good quality</Текст>
+  </Row>
+  <Row>
+    <Дата>2024-11-18</Дата>
+    <user_id>3</user_id>
+    <product_id>3</product_id>
+    <Оценка>3</Оценка>
+    <Текст>Average item</Текст>
+  </Row>
+  <Row>
+    <Дата>2024-11-19</Дата>
+    <user_id>4</user_id>
+    <product_id>4</product_id>
+    <Оценка>5</Оценка>
+    <Текст>Loved it</Текст>
+  </Row>
+  <Row>
+    <Дата>2024-11-20</Дата>
+    <user_id>5</user_id>
+    <product_id>5</product_id>
+    <Оценка>4</Оценка>
+    <Текст>Highly recommended</Текст>
+  </Row>
+</reviews>
+<product_characteristics>
+  <Row>
+    <product_id>1</product_id>
+    <characteristic_id>1</characteristic_id>
+    <value>Value A</value>
+  </Row>
+  <Row>
+    <product_id>1</product_id>
+    <characteristic_id>2</characteristic_id>
+    <value>Value B</value>
+  </Row>
+  <Row>
+    <product_id>2</product_id>
+    <characteristic_id>3</characteristic_id>
+    <value>Value C</value>
+  </Row>
+  <Row>
+    <product_id>3</product_id>
+    <characteristic_id>1</characteristic_id>
+    <value>Value D</value>
+  </Row>
+  <Row>
+    <product_id>3</product_id>
+    <characteristic_id>4</characteristic_id>
+    <value>Value E</value>
+  </Row>
+</product_characteristics>
+<product_images>
+  <Row>
+    <product_id>1</product_id>
+    <URL_изображения>url1.jpg</URL_изображения>
+    <Основное_изображение>True</Основное_изображение>
+  </Row>
+  <Row>
+    <product_id>1</product_id>
+    <URL_изображения>url2.jpg</URL_изображения>
+    <Основное_изображение>False</Основное_изображение>
+  </Row>
+  <Row>
+    <product_id>2</product_id>
+    <URL_изображения>url3.jpg</URL_изображения>
+    <Основное_изображение>True</Основное_изображение>
+  </Row>
+  <Row>
+    <product_id>3</product_id>
+    <URL_изображения>url4.jpg</URL_изображения>
+    <Основное_изображение>False</Основное_изображение>
+  </Row>
+  <Row>
+    <product_id>4</product_id>
+    <URL_изображения>url5.jpg</URL_изображения>
+    <Основное_изображение>True</Основное_изображение>
+  </Row>
+</product_images>
+<orders>
+  <Row>
+    <user_id>1</user_id>
+    <Дата_создания>2024-11-10</Дата_создания>
+    <Дата_обновления>2024-11-15</Дата_обновления>
+    <Сумма>1000</Сумма>
+    <Статус>Pending</Статус>
+  </Row>
+  <Row>
+    <user_id>2</user_id>
+    <Дата_создания>2024-11-11</Дата_создания>
+    <Дата_обновления>2024-11-16</Дата_обновления>
+    <Сумма>2000</Сумма>
+    <Статус>Completed</Статус>
+  </Row>
+  <Row>
+    <user_id>3</user_id>
+    <Дата_создания>2024-11-12</Дата_создания>
+    <Дата_обновления>2024-11-17</Дата_обновления>
+    <Сумма>1500</Сумма>
+    <Статус>Cancelled</Статус>
+  </Row>
+  <Row>
+    <user_id>4</user_id>
+    <Дата_создания>2024-11-13</Дата_создания>
+    <Дата_обновления>2024-11-18</Дата_обновления>
+    <Сумма>500</Сумма>
+    <Статус>Pending</Статус>
+  </Row>
+  <Row>
+    <user_id>5</user_id>
+    <Дата_создания>2024-11-14</Дата_создания>
+    <Дата_обновления>2024-11-19</Дата_обновления>
+    <Сумма>3000</Сумма>
+    <Статус>Completed</Статус>
+  </Row>
+</orders>
+<order_items>
+  <Row>
+    <order_id>1</order_id>
+    <product_id>2</product_id>
+    <Количество>4</Количество>
+    <Цена_за_единицу>500</Цена_за_единицу>
+    <Итог_по_пункту>2000</Итог_по_пункту>
+  </Row>
+  <Row>
+    <order_id>1</order_id>
+    <product_id>1</product_id>
+    <Количество>3</Количество>
+    <Цена_за_единицу>200</Цена_за_единицу>
+    <Итог_по_пункту>600</Итог_по_пункту>
+  </Row>
+  <Row>
+    <order_id>2</order_id>
+    <product_id>3</product_id>
+    <Количество>2</Количество>
+    <Цена_за_единицу>300</Цена_за_единицу>
+    <Итог_по_пункту>600</Итог_по_пункту>
+  </Row>
+  <Row>
+    <order_id>3</order_id>
+    <product_id>5</product_id>
+    <Количество>1</Количество>
+    <Цена_за_единицу>100</Цена_за_единицу>
+    <Итог_по_пункту>100</Итог_по_пункту>
+  </Row>
+  <Row>
+    <order_id>4</order_id>
+    <product_id>2</product_id>
+    <Количество>1</Количество>
+    <Цена_за_единицу>400</Цена_за_единицу>
+    <Итог_по_пункту>400</Итог_по_пункту>
+  </Row>
+</order_items>
+</Tables>

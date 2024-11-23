@@ -2,337 +2,400 @@
 <Tables>
   <categories>
     <Row>
-      <Название>Electronics</Название>
-      <Описание>Electronic devices</Описание>
+      <Column1>Название</Column1>
+      <Column2>Описание</Column2>
     </Row>
     <Row>
-      <Название>Furniture</Название>
-      <Описание>Home furniture</Описание>
+      <Column1>Electronics</Column1>
+      <Column2>Electronic devices</Column2>
     </Row>
     <Row>
-      <Название>Clothing</Название>
-      <Описание>Apparel</Описание>
+      <Column1>Furniture</Column1>
+      <Column2>Home furniture</Column2>
     </Row>
     <Row>
-      <Название>Books</Название>
-      <Описание>Books for all ages</Описание>
+      <Column1>Clothing</Column1>
+      <Column2>Apparel</Column2>
     </Row>
     <Row>
-      <Название>Toys</Название>
-      <Описание>Toys for kids</Описание>
+      <Column1>Books</Column1>
+      <Column2>Books for all ages</Column2>
+    </Row>
+    <Row>
+      <Column1>Toys</Column1>
+      <Column2>Toys for kids</Column2>
     </Row>
   </categories>
   <manufacturers>
     <Row>
-      <Название>Sony</Название>
-      <Страна>Japan</Страна>
+      <Column1>Название</Column1>
+      <Column2>Страна</Column2>
     </Row>
     <Row>
-      <Название>Ikea</Название>
-      <Страна>Sweden</Страна>
+      <Column1>Sony</Column1>
+      <Column2>Japan</Column2>
     </Row>
     <Row>
-      <Название>Nike</Название>
-      <Страна>USA</Страна>
+      <Column1>Ikea</Column1>
+      <Column2>Sweden</Column2>
     </Row>
     <Row>
-      <Название>Penguin Books</Название>
-      <Страна>UK</Страна>
+      <Column1>Nike</Column1>
+      <Column2>USA</Column2>
     </Row>
     <Row>
-      <Название>Lego</Название>
-      <Страна>Denmark</Страна>
+      <Column1>Penguin Books</Column1>
+      <Column2>UK</Column2>
+    </Row>
+    <Row>
+      <Column1>Lego</Column1>
+      <Column2>Denmark</Column2>
     </Row>
   </manufacturers>
   <characteristics>
     <Row>
-      <Название>Color</Название>
-      <Описание>Product color</Описание>
+      <Column1>Название</Column1>
+      <Column2>Описание</Column2>
     </Row>
     <Row>
-      <Название>Size</Название>
-      <Описание>Product size</Описание>
+      <Column1>Color</Column1>
+      <Column2>Product color</Column2>
     </Row>
     <Row>
-      <Название>Material</Название>
-      <Описание>Type of material</Описание>
+      <Column1>Size</Column1>
+      <Column2>Product size</Column2>
     </Row>
     <Row>
-      <Название>Brand</Название>
-      <Описание>Manufacturer brand</Описание>
+      <Column1>Material</Column1>
+      <Column2>Type of material</Column2>
     </Row>
     <Row>
-      <Название>Weight</Название>
-      <Описание>Weight of product</Описание>
+      <Column1>Brand</Column1>
+      <Column2>Manufacturer brand</Column2>
+    </Row>
+    <Row>
+      <Column1>Weight</Column1>
+      <Column2>Weight of product</Column2>
     </Row>
   </characteristics>
   <products>
     <Row>
-      <Вес>1500</Вес>
-      <Название>Smartphone</Название>
-      <Цена>700</Цена>
-      <Описание>High-tech phone</Описание>
-      <category_id>1</category_id>
-      <manufacturer_id>1</manufacturer_id>
-      <SKU>SP700</SKU>
-      <Количество_на_складе>50</Количество_на_складе>
-      <Дата_создания>2024-11-01</Дата_создания>
-      <Дата_обновления>2024-11-10</Дата_обновления>
+      <Column1>Вес</Column1>
+      <Column2>Название</Column2>
+      <Column3>Цена</Column3>
+      <Column4>Описание</Column4>
+      <Column5>category_id</Column5>
+      <Column6>manufacturer_id</Column6>
+      <Column7>SKU</Column7>
+      <Column8>Количество_на_складе</Column8>
+      <Column9>Дата_создания</Column9>
+      <Column10>Дата_обновления</Column10>
     </Row>
     <Row>
-      <Вес>20000</Вес>
-      <Название>Table</Название>
-      <Цена>150</Цена>
-      <Описание>Dining table</Описание>
-      <category_id>2</category_id>
-      <manufacturer_id>2</manufacturer_id>
-      <SKU>TB150</SKU>
-      <Количество_на_складе>20</Количество_на_складе>
-      <Дата_создания>2024-11-02</Дата_создания>
-      <Дата_обновления>2024-11-12</Дата_обновления>
+      <Column1>1500</Column1>
+      <Column2>Smartphone</Column2>
+      <Column3>700</Column3>
+      <Column4>High-tech phone</Column4>
+      <Column5>1</Column5>
+      <Column6>1</Column6>
+      <Column7>SP700</Column7>
+      <Column8>50</Column8>
+      <Column9>2024-11-01</Column9>
+      <Column10>2024-11-10</Column10>
     </Row>
     <Row>
-      <Вес></Вес>
-      <Название>T-Shirt</Название>
-      <Цена>30</Цена>
-      <Описание>Cotton t-shirt</Описание>
-      <category_id>3</category_id>
-      <manufacturer_id>3</manufacturer_id>
-      <SKU>TS30</SKU>
-      <Количество_на_складе>100</Количество_на_складе>
-      <Дата_создания>2024-11-03</Дата_создания>
-      <Дата_обновления>2024-11-13</Дата_обновления>
+      <Column1>20000</Column1>
+      <Column2>Table</Column2>
+      <Column3>150</Column3>
+      <Column4>Dining table</Column4>
+      <Column5>2</Column5>
+      <Column6>2</Column6>
+      <Column7>TB150</Column7>
+      <Column8>20</Column8>
+      <Column9>2024-11-02</Column9>
+      <Column10>2024-11-12</Column10>
     </Row>
     <Row>
-      <Вес></Вес>
-      <Название>Novel</Название>
-      <Цена>20</Цена>
-      <Описание>Bestselling novel</Описание>
-      <category_id>4</category_id>
-      <manufacturer_id>4</manufacturer_id>
-      <SKU>NV20</SKU>
-      <Количество_на_складе>200</Количество_на_складе>
-      <Дата_создания>2024-11-04</Дата_создания>
-      <Дата_обновления>2024-11-14</Дата_обновления>
+      <Column1>100</Column1>
+      <Column2>T-Shirt</Column2>
+      <Column3>30</Column3>
+      <Column4>Cotton t-shirt</Column4>
+      <Column5>3</Column5>
+      <Column6>3</Column6>
+      <Column7>TS30</Column7>
+      <Column8>100</Column8>
+      <Column9>2024-11-03</Column9>
+      <Column10>2024-11-13</Column10>
     </Row>
     <Row>
-      <Вес>500</Вес>
-      <Название>Toy Car</Название>
-      <Цена>50</Цена>
-      <Описание>Remote-controlled car</Описание>
-      <category_id>5</category_id>
-      <manufacturer_id>5</manufacturer_id>
-      <SKU>TC50</SKU>
-      <Количество_на_складе>15</Количество_на_складе>
-      <Дата_создания>2024-11-05</Дата_создания>
-      <Дата_обновления>2024-11-15</Дата_обновления>
+      <Column1>500</Column1>
+      <Column2>Novel</Column2>
+      <Column3>20</Column3>
+      <Column4>Bestselling novel</Column4>
+      <Column5>4</Column5>
+      <Column6>4</Column6>
+      <Column7>NV20</Column7>
+      <Column8>200</Column8>
+      <Column9>2024-11-04</Column9>
+      <Column10>2024-11-14</Column10>
+    </Row>
+    <Row>
+      <Column1>500</Column1>
+      <Column2>Toy Car</Column2>
+      <Column3>50</Column3>
+      <Column4>Remote-controlled car</Column4>
+      <Column5>5</Column5>
+      <Column6>5</Column6>
+      <Column7>TC50</Column7>
+      <Column8>15</Column8>
+      <Column9>2024-11-05</Column9>
+      <Column10>2024-11-15</Column10>
     </Row>
   </products>
+  <users>
+    <Row>
+      <Column1>UserName</Column1>
+      <Column2>Password</Column2>
+      <Column3>PasswordResetToken</Column3>
+      <Column4>Email</Column4>
+      <Column5>Status</Column5>
+      <Column6>created_at</Column6>
+    </Row>
+    <Row>
+      <Column1>user1</Column1>
+      <Column2>hash1</Column2>
+      <Column3>token2</Column3>
+      <Column4>user1@example.com</Column4>
+      <Column5>10</Column5>
+      <Column6>2024-11-01</Column6>
+    </Row>
+    <Row>
+      <Column1>user2</Column1>
+      <Column2>hash2</Column2>
+      <Column3>token2</Column3>
+      <Column4>user2@example.com</Column4>
+      <Column5>20</Column5>
+      <Column6>2024-11-02</Column6>
+    </Row>
+    <Row>
+      <Column1>user3</Column1>
+      <Column2>hash3</Column2>
+      <Column3>token2</Column3>
+      <Column4>user3@example.com</Column4>
+      <Column5>10</Column5>
+      <Column6>2024-11-03</Column6>
+    </Row>
+    <Row>
+      <Column1>user4</Column1>
+      <Column2>hash4</Column2>
+      <Column3>token2</Column3>
+      <Column4>user4@example.com</Column4>
+      <Column5>10</Column5>
+      <Column6>2024-11-04</Column6>
+    </Row>
+    <Row>
+      <Column1>user5</Column1>
+      <Column2>hash5</Column2>
+      <Column3>token5</Column3>
+      <Column4>user5@example.com</Column4>
+      <Column5>30</Column5>
+      <Column6>2024-11-05</Column6>
+    </Row>
+  </users>
   <reviews>
     <Row>
-      <Дата>2024-11-16</Дата>
-      <user_id>1</user_id>
-      <product_id>1</product_id>
-      <Оценка>5</Оценка>
-      <Текст>Excellent product</Текст>
+      <Column1>Дата</Column1>
+      <Column2>user_id</Column2>
+      <Column3>product_id</Column3>
+      <Column4>Оценка</Column4>
+      <Column5>Текст</Column5>
     </Row>
     <Row>
-      <Дата>2024-11-17</Дата>
-      <user_id>2</user_id>
-      <product_id>2</product_id>
-      <Оценка>4</Оценка>
-      <Текст>Good quality</Текст>
+      <Column1>2024-11-16</Column1>
+      <Column2>1</Column2>
+      <Column3>1</Column3>
+      <Column4>5</Column4>
+      <Column5>Excellent product</Column5>
     </Row>
     <Row>
-      <Дата>2024-11-18</Дата>
-      <user_id>3</user_id>
-      <product_id>3</product_id>
-      <Оценка>3</Оценка>
-      <Текст>Average item</Текст>
+      <Column1>2024-11-17</Column1>
+      <Column2>2</Column2>
+      <Column3>2</Column3>
+      <Column4>4</Column4>
+      <Column5>Good quality</Column5>
     </Row>
     <Row>
-      <Дата>2024-11-19</Дата>
-      <user_id>4</user_id>
-      <product_id>4</product_id>
-      <Оценка>5</Оценка>
-      <Текст>Loved it</Текст>
+      <Column1>2024-11-18</Column1>
+      <Column2>3</Column2>
+      <Column3>3</Column3>
+      <Column4>3</Column4>
+      <Column5>Average item</Column5>
     </Row>
     <Row>
-      <Дата>2024-11-20</Дата>
-      <user_id>5</user_id>
-      <product_id>5</product_id>
-      <Оценка>4</Оценка>
-      <Текст>Highly recommended</Текст>
+      <Column1>2024-11-19</Column1>
+      <Column2>4</Column2>
+      <Column3>4</Column3>
+      <Column4>5</Column4>
+      <Column5>Loved it</Column5>
+    </Row>
+    <Row>
+      <Column1>2024-11-20</Column1>
+      <Column2>5</Column2>
+      <Column3>5</Column3>
+      <Column4>4</Column4>
+      <Column5>Highly recommended</Column5>
     </Row>
   </reviews>
   <product_characteristics>
     <Row>
-      <product_id>1</product_id>
-      <characteristic_id>101</characteristic_id>
-      <value>Value A</value>
+      <Column1>product_id</Column1>
+      <Column2>characteristic_id</Column2>
+      <Column3>value</Column3>
     </Row>
     <Row>
-      <product_id>1</product_id>
-      <characteristic_id>102</characteristic_id>
-      <value>Value B</value>
+      <Column1>1</Column1>
+      <Column2>1</Column2>
+      <Column3>Value A</Column3>
     </Row>
     <Row>
-      <product_id>2</product_id>
-      <characteristic_id>103</characteristic_id>
-      <value>Value C</value>
+      <Column1>1</Column1>
+      <Column2>2</Column2>
+      <Column3>Value B</Column3>
     </Row>
     <Row>
-      <product_id>3</product_id>
-      <characteristic_id>101</characteristic_id>
-      <value>Value D</value>
+      <Column1>2</Column1>
+      <Column2>3</Column2>
+      <Column3>Value C</Column3>
     </Row>
     <Row>
-      <product_id>3</product_id>
-      <characteristic_id>104</characteristic_id>
-      <value>Value E</value>
+      <Column1>3</Column1>
+      <Column2>1</Column2>
+      <Column3>Value D</Column3>
+    </Row>
+    <Row>
+      <Column1>3</Column1>
+      <Column2>4</Column2>
+      <Column3>Value E</Column3>
     </Row>
   </product_characteristics>
   <product_images>
     <Row>
-      <product_id>1</product_id>
-      <URL_изображения>url1.jpg</URL_изображения>
-      <Основное_изображение>TRUE</Основное_изображение>
+      <Column1>product_id</Column1>
+      <Column2>URL_изображения</Column2>
+      <Column3>Основное_изображение</Column3>
     </Row>
     <Row>
-      <product_id>1</product_id>
-      <URL_изображения>url2.jpg</URL_изображения>
-      <Основное_изображение>FALSE</Основное_изображение>
+      <Column1>1</Column1>
+      <Column2>url1.jpg</Column2>
+      <Column3>TRUE</Column3>
     </Row>
     <Row>
-      <product_id>2</product_id>
-      <URL_изображения>url3.jpg</URL_изображения>
-      <Основное_изображение>TRUE</Основное_изображение>
+      <Column1>1</Column1>
+      <Column2>url2.jpg</Column2>
+      <Column3>FALSE</Column3>
     </Row>
     <Row>
-      <product_id>3</product_id>
-      <URL_изображения>url4.jpg</URL_изображения>
-      <Основное_изображение>FALSE</Основное_изображение>
+      <Column1>2</Column1>
+      <Column2>url3.jpg</Column2>
+      <Column3>TRUE</Column3>
     </Row>
     <Row>
-      <product_id>4</product_id>
-      <URL_изображения>url5.jpg</URL_изображения>
-      <Основное_изображение>TRUE</Основное_изображение>
+      <Column1>3</Column1>
+      <Column2>url4.jpg</Column2>
+      <Column3>FALSE</Column3>
+    </Row>
+    <Row>
+      <Column1>4</Column1>
+      <Column2>url5.jpg</Column2>
+      <Column3>TRUE</Column3>
     </Row>
   </product_images>
-  <user>
-    <Row>
-      <username>user1</username>
-      <password_hash>hash1</password_hash>
-      <password_reset_token></password_reset_token>
-      <email>user1@example.com</email>
-      <status>10</status>
-      <created_at>2024-11-01</created_at>
-    </Row>
-    <Row>
-      <username>user2</username>
-      <password_hash>hash2</password_hash>
-      <password_reset_token>token2</password_reset_token>
-      <email>user2@example.com</email>
-      <status>20</status>
-      <created_at>2024-11-02</created_at>
-    </Row>
-    <Row>
-      <username>user3</username>
-      <password_hash>hash3</password_hash>
-      <password_reset_token></password_reset_token>
-      <email>user3@example.com</email>
-      <status>10</status>
-      <created_at>2024-11-03</created_at>
-    </Row>
-    <Row>
-      <username>user4</username>
-      <password_hash>hash4</password_hash>
-      <password_reset_token></password_reset_token>
-      <email>user4@example.com</email>
-      <status>10</status>
-      <created_at>2024-11-04</created_at>
-    </Row>
-    <Row>
-      <username>user5</username>
-      <password_hash>hash5</password_hash>
-      <password_reset_token>token5</password_reset_token>
-      <email>user5@example.com</email>
-      <status>30</status>
-      <created_at>2024-11-05</created_at>
-    </Row>
-  </user>
   <orders>
     <Row>
-      <user_id>user1</user_id>
-      <Дата_создания>2024-11-10</Дата_создания>
-      <Дата_обновления>2024-11-15</Дата_обновления>
-      <Сумма>1000</Сумма>
-      <Статус>Pending</Статус>
+      <Column1>user_id</Column1>
+      <Column2>Дата_создания</Column2>
+      <Column3>Дата_обновления</Column3>
+      <Column4>Сумма</Column4>
+      <Column5>Статус</Column5>
     </Row>
     <Row>
-      <user_id>user2</user_id>
-      <Дата_создания>2024-11-11</Дата_создания>
-      <Дата_обновления>2024-11-16</Дата_обновления>
-      <Сумма>2000</Сумма>
-      <Статус>Completed</Статус>
+      <Column1>1</Column1>
+      <Column2>2024-11-10</Column2>
+      <Column3>2024-11-15</Column3>
+      <Column4>1000</Column4>
+      <Column5>Pending</Column5>
     </Row>
     <Row>
-      <user_id>user3</user_id>
-      <Дата_создания>2024-11-12</Дата_создания>
-      <Дата_обновления>2024-11-17</Дата_обновления>
-      <Сумма>1500</Сумма>
-      <Статус>Cancelled</Статус>
+      <Column1>2</Column1>
+      <Column2>2024-11-11</Column2>
+      <Column3>2024-11-16</Column3>
+      <Column4>2000</Column4>
+      <Column5>Completed</Column5>
     </Row>
     <Row>
-      <user_id>user1</user_id>
-      <Дата_создания>2024-11-13</Дата_создания>
-      <Дата_обновления>2024-11-18</Дата_обновления>
-      <Сумма>500</Сумма>
-      <Статус>Pending</Статус>
+      <Column1>3</Column1>
+      <Column2>2024-11-12</Column2>
+      <Column3>2024-11-17</Column3>
+      <Column4>1500</Column4>
+      <Column5>Cancelled</Column5>
     </Row>
     <Row>
-      <user_id>user4</user_id>
-      <Дата_создания>2024-11-14</Дата_создания>
-      <Дата_обновления>2024-11-19</Дата_обновления>
-      <Сумма>3000</Сумма>
-      <Статус>Completed</Статус>
+      <Column1>4</Column1>
+      <Column2>2024-11-13</Column2>
+      <Column3>2024-11-18</Column3>
+      <Column4>500</Column4>
+      <Column5>Pending</Column5>
+    </Row>
+    <Row>
+      <Column1>5</Column1>
+      <Column2>2024-11-14</Column2>
+      <Column3>2024-11-19</Column3>
+      <Column4>3000</Column4>
+      <Column5>Completed</Column5>
     </Row>
   </orders>
   <order_items>
     <Row>
-      <order_id>1</order_id>
-      <product_id>101</product_id>
-      <Количество>2</Количество>
-      <Цена_за_единицу>500</Цена_за_единицу>
-      <Итог_по_пункту>1000</Итог_по_пункту>
+      <Column1>order_id</Column1>
+      <Column2>product_id</Column2>
+      <Column3>Количество</Column3>
+      <Column4>Цена_за_единицу</Column4>
+      <Column5>Итог_по_пункту</Column5>
     </Row>
     <Row>
-      <order_id>1</order_id>
-      <product_id>102</product_id>
-      <Количество>1</Количество>
-      <Цена_за_единицу>200</Цена_за_единицу>
-      <Итог_по_пункту>200</Итог_по_пункту>
+      <Column1>1</Column1>
+      <Column2>2</Column2>
+      <Column3>4</Column3>
+      <Column4>500</Column4>
+      <Column5>2000</Column5>
     </Row>
     <Row>
-      <order_id>2</order_id>
-      <product_id>103</product_id>
-      <Количество>3</Количество>
-      <Цена_за_единицу>300</Цена_за_единицу>
-      <Итог_по_пункту>900</Итог_по_пункту>
+      <Column1>1</Column1>
+      <Column2>1</Column2>
+      <Column3>3</Column3>
+      <Column4>200</Column4>
+      <Column5>600</Column5>
     </Row>
     <Row>
-      <order_id>3</order_id>
-      <product_id>101</product_id>
-      <Количество>5</Количество>
-      <Цена_за_единицу>100</Цена_за_единицу>
-      <Итог_по_пункту>500</Итог_по_пункту>
+      <Column1>2</Column1>
+      <Column2>3</Column2>
+      <Column3>2</Column3>
+      <Column4>300</Column4>
+      <Column5>600</Column5>
     </Row>
     <Row>
-      <order_id>4</order_id>
-      <product_id>104</product_id>
-      <Количество>2</Количество>
-      <Цена_за_единицу>400</Цена_за_единицу>
-      <Итог_по_пункту>800</Итог_по_пункту>
+      <Column1>3</Column1>
+      <Column2>5</Column2>
+      <Column3>1</Column3>
+      <Column4>100</Column4>
+      <Column5>100</Column5>
+    </Row>
+    <Row>
+      <Column1>4</Column1>
+      <Column2>2</Column2>
+      <Column3>1</Column3>
+      <Column4>400</Column4>
+      <Column5>400</Column5>
     </Row>
   </order_items>
 </Tables>

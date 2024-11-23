@@ -43,6 +43,11 @@ namespace Practic1_2024.Data
                 .WithMany(p => p.ProductCharacteristics)
                 .HasForeignKey(pc => pc.product_id)
                 .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<ProductCharacteristic>()
+       .HasOne(pc => pc.Characteristic)
+       .WithMany(c => c.ProductCharacteristics)
+       .HasForeignKey(pc => pc.characteristic_id)
+       .OnDelete(DeleteBehavior.Cascade); // Настройка поведения при удалении, если требуется
 
             modelBuilder.Entity<Review>()
                 .HasOne(r => r.User)

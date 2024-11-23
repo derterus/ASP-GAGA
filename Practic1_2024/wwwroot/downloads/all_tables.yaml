@@ -171,19 +171,19 @@ product_characteristics:
   Column2: characteristic_id
   Column3: value
 - Column1: 1
-  Column2: 101
+  Column2: 1
   Column3: Value A
 - Column1: 1
-  Column2: 102
+  Column2: 2
   Column3: Value B
 - Column1: 2
-  Column2: 103
+  Column2: 3
   Column3: Value C
 - Column1: 3
-  Column2: 101
+  Column2: 1
   Column3: Value D
 - Column1: 3
-  Column2: 104
+  Column2: 4
   Column3: Value E
 product_images:
 - Column1: product_id
@@ -210,27 +210,27 @@ orders:
   Column3: Дата_обновления
   Column4: Сумма
   Column5: Статус
-- Column1: user1
+- Column1: 1
   Column2: 2024-11-10
   Column3: 2024-11-15
   Column4: 1000
   Column5: Pending
-- Column1: user2
+- Column1: 2
   Column2: 2024-11-11
   Column3: 2024-11-16
   Column4: 2000
   Column5: Completed
-- Column1: user3
+- Column1: 3
   Column2: 2024-11-12
   Column3: 2024-11-17
   Column4: 1500
   Column5: Cancelled
-- Column1: user1
+- Column1: 4
   Column2: 2024-11-13
   Column3: 2024-11-18
   Column4: 500
   Column5: Pending
-- Column1: user4
+- Column1: 5
   Column2: 2024-11-14
   Column3: 2024-11-19
   Column4: 3000
